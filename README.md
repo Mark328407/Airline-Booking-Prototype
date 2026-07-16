@@ -1,5 +1,7 @@
 # Airline Booking Prototype
 
+**[Live Demo →](https://airline-booking-prototype.vercel.app/)**
+
 A frontend-only airline booking flow prototype built with **Vue.js 3** and **Bootstrap 5** — search flights, pick a fare, enter passenger details, and get a boarding-pass-style confirmation with a generated PNR. No backend: flight data is mocked, so the whole flow runs entirely in the browser.
 
 ## Features
@@ -33,4 +35,3 @@ Rather than using Bootstrap's default theme as-is, the primary/secondary/warning
 ## Author
 
 **Mark Anthony Estrecho** — [GitHub](https://github.com/Mark328407)
-# Airline-Booking-Prototype
