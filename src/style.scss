@@ -1,0 +1,281 @@
+// ---------- Bootstrap variable overrides ----------
+// Custom palette: deep sky-indigo primary, warm amber accent (boarding-pass stripe)
+$primary: #2b3a67;
+$secondary: #6b7690;
+$warning: #f2a93b;
+$success: #2f6b3a;
+$danger: #a13a3a;
+$light: #f4f6fb;
+$dark: #1b2430;
+
+$body-bg: #f8f9fc;
+$body-color: #1b2430;
+
+$font-family-sans-serif: "Inter", sans-serif;
+$headings-font-family: "Sora", sans-serif;
+$headings-font-weight: 600;
+
+$border-radius: 0.2rem;
+$border-radius-sm: 0.15rem;
+$border-radius-lg: 0.25rem;
+
+$btn-font-weight: 600;
+$card-border-color: rgba(27, 36, 48, 0.1);
+
+@import "bootstrap/scss/bootstrap";
+
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+}
+
+// ---------- Custom identity on top of Bootstrap ----------
+:root {
+  --font-mono: "IBM Plex Mono", monospace;
+  --color-amber: #f2a93b;
+  --color-navy: #2b3a67;
+}
+
+body {
+  font-family: $font-family-sans-serif;
+}
+
+.navbar-brand-custom {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.hero-sky {
+  background: linear-gradient(135deg, #2b3a67 0%, #1b2430 100%);
+  color: #f4f6fb;
+  padding: 4rem 0 3rem;
+}
+
+.hero-sky .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-amber);
+}
+
+.flight-card {
+  border: 1px solid rgba(27, 36, 48, 0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.flight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(27, 36, 48, 0.08);
+}
+
+.flight-route {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+}
+
+.flight-price {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+.flight-divider {
+  position: relative;
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(27, 36, 48, 0.35) 0,
+    rgba(27, 36, 48, 0.35) 4px,
+    transparent 4px,
+    transparent 9px
+  );
+  margin: 0 12px;
+}
+
+.flight-divider::after {
+  content: "✈";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%) rotate(90deg);
+  font-size: 0.85rem;
+  color: rgba(27, 36, 48, 0.5);
+}
+
+/* ---------- Signature element: boarding pass ---------- */
+.boarding-pass {
+  background: white;
+  border: 1px solid rgba(27, 36, 48, 0.12);
+  display: flex;
+  max-width: 640px;
+  margin: 0 auto;
+  box-shadow: 0 16px 32px rgba(27, 36, 48, 0.1);
+}
+
+.boarding-pass-main {
+  flex: 1;
+  padding: 28px 30px;
+  position: relative;
+}
+
+.boarding-pass-main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(27, 36, 48, 0.2) 0,
+    rgba(27, 36, 48, 0.2) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.boarding-pass-stub {
+  width: 190px;
+  background: var(--color-navy);
+  color: #f4f6fb;
+  padding: 28px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.boarding-pass-stub::before,
+.boarding-pass-stub::after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  width: 24px;
+  height: 24px;
+  background: #f8f9fc;
+  border-radius: 50%;
+}
+
+.boarding-pass-stub::before {
+  top: -12px;
+}
+
+.boarding-pass-stub::after {
+  bottom: -12px;
+}
+
+.boarding-pass-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(27, 36, 48, 0.5);
+  margin-bottom: 2px;
+}
+
+.boarding-pass-value {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.boarding-pass-pnr {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  letter-spacing: 0.15em;
+  color: var(--color-amber);
+}
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.step-indicator .step {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(27, 36, 48, 0.08);
+  color: rgba(27, 36, 48, 0.5);
+}
+
+.step-indicator .step.active {
+  background: var(--color-navy);
+  color: white;
+}
+
+.step-indicator .step.done {
+  background: $success;
+  color: white;
+}
+
+/* ---------- Footer ---------- */
+.app-footer {
+  background: var(--color-navy);
+  color: rgba(244, 246, 251, 0.7);
+}
+
+.app-footer-inner {
+  padding: 1.25rem 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.app-footer-brand {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  color: #f4f6fb;
+  letter-spacing: -0.01em;
+}
+
+.app-footer-text {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.app-footer-text a {
+  color: var(--color-amber);
+  text-decoration: underline;
+}
+
+.app-footer-year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(244, 246, 251, 0.45);
+}
+
+@media (max-width: 640px) {
+  .app-footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
