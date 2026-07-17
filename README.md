@@ -1,23 +1,24 @@
-# Airline Booking Prototype
+# SkyRoute — Airline Booking Admin Console
 
-**[Live Demo →](https://airline-booking-prototype.vercel.app/)**
+A frontend-only operations dashboard prototype for an airline booking system. Built with React and Recharts, using deterministic seeded mock data so the dashboard renders consistent numbers on every load — no backend required.
 
-A frontend-only airline booking flow prototype built with **Vue.js 3** and **Bootstrap 5** — search flights, pick a fare, enter passenger details, and get a boarding-pass-style confirmation with a generated PNR. No backend: flight data is mocked, so the whole flow runs entirely in the browser.
+**Live demo:** _add your Vercel URL here once deployed_
 
 ## Features
 
-- **Flight search** — pick origin/destination airports, date, and passenger count
-- **Results list** — mock flights with times, duration, stops, and fare
-- **Passenger details** — dynamic form based on passenger count
-- **Confirmation** — a boarding-pass-styled summary with a randomly generated PNR, gate, and seat
-- **Step indicator** in the navbar tracking progress through the 4-step flow
+- **Dashboard** — KPI cards (total bookings, confirmed revenue, average fare, cancellation rate), a 14-day booking trend line chart, a booking-status pie chart, and a revenue-by-route bar chart
+- **Flights** — filterable flight schedule table with live status badges (On time / Boarding / Delayed / Departed)
+- **Bookings** — searchable, filterable bookings table (by passenger name or PNR) with per-status badges
+
+## Design
+
+Navy/amber "boarding pass" visual language shared with the companion SkyRoute booking prototype: Sora for display type, Inter for body text, IBM Plex Mono for flight codes, PNRs, and data. The sidebar's dashed edge echoes a perforated ticket stub.
 
 ## Tech Stack
 
-- Vue 3 (Composition API, `<script setup>`)
-- Vue Router
-- Bootstrap 5 (customized via Sass variable overrides — not default Bootstrap blue)
-- Vite
+- React 18 + Vite
+- Recharts for all data visualization
+- Plain inline styles (no CSS framework) — a self-contained single component
 
 ## Getting Started
 
@@ -26,12 +27,14 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:5173`.
+### Build
 
-## Design Notes
-
-Rather than using Bootstrap's default theme as-is, the primary/secondary/warning colors and typography were overridden via Sass variables (`src/style.scss`) before importing Bootstrap, giving it a deep sky-indigo and amber palette themed around flight/tickets. The confirmation screen's boarding-pass card — with its perforated edge and PNR stub — is the signature visual element, built with real generated booking data rather than as pure decoration.
+```bash
+npm run build
+npm run preview
+```
 
 ## Author
 
-**Mark Anthony Estrecho** — [GitHub](https://github.com/Mark328407)
+**Mark Anthony Estrecho** — [Portfolio](https://my-portfolio-cilr.vercel.app/) · [GitHub](https://github.com/Mark328407)
+# Airline-Booking-Admin-Console
